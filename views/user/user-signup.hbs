@@ -1,0 +1,57 @@
+
+<div class="container">
+ 
+    <div class="row justify-content-center" >
+      
+
+        <form name="loginform" method="post" action="/signup" style="width: 30vw;  border-radius: 20px; background-color:blueviolet; margin-top: 20vh;" class="signup-form" id="signup-form">
+        <div class="pt-5"><h1 class="text-center text-white">Signup</h1></div>
+  <div class="mb-3 mt-5 text-white">
+    
+    {{!-- <p class="text-danger ml-2"></p> --}}
+    
+    <input type="email" name="email" class="form-control rounded-pill text-white text-center ms-5 bg-dark" style="border: 2px solid #0066cc; width: 20vw;" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp" required>
+    
+  </div>
+   <div class="mb-3 text-white">
+    
+    <input type="text" name="name" class="form-control text-white rounded-pill text-center ms-5 bg-dark" style="border: 2px solid #0066cc; width: 20vw;" placeholder="name" id="exampleInputPassword1" required>
+    
+  </div>
+  <div class="mb-3 text-white">
+    
+    <input type="tel" name="phonenumber" class="form-control text-white rounded-pill text-center ms-5 bg-dark" style="border: 2px solid #0066cc; width: 20vw;" placeholder="mobile" id="exampleInputPassword1" required>
+    
+  </div>
+  <div class="mb-3 text-white">
+    
+    <input type="password" name="password" class="form-control text-white rounded-pill text-center ms-5 bg-dark" style="border: 2px solid #0066cc; width: 20vw;" placeholder="Password" id="exampleInputPassword1" required>
+    {{!-- <input type="hidden" name="blocked" class="form-control text-white rounded-pill text-center ms-5 bg-dark" style="border: 2px solid #0066cc; width: 20vw;" value="false" id="exampleInputPassword1" hidden> --}}
+  </div>
+    <div class="mb-3"><a href="/login" class="text-secondary" style="margin-left: 8vw;">Already have account?</a></div>
+  <div class="mb-5" style="margin-left: 8vw;"><button type="submit" class="btn btn-success rounded-pill mb-3 justify-content-center bg-dark" style="width: 10vw; border: 2px solid green;" >signup</button></div>
+</form>
+
+    </div>
+    
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+<script>
+$(document).ready(function(){
+  $("#signup-form").validate({
+    rules:{
+    password:{
+       minlength:6
+
+    },
+    phonenumber:{
+      digits:true
+    }
+
+    }
+  })
+
+})
+</script>

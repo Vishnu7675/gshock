@@ -1,0 +1,205 @@
+<section class="content-main" style="margin-left: 150px;margin-top:150px">
+  <div class="content-header">
+    <h2 class="content-title"> Sales Report </h2>
+    {{!-- <div>
+      <a href="#" class="btn btn-primary">Create report</a>
+    </div> --}}
+  </div>
+  
+
+ {{!-- <button onclick="sortSalesReport('date')">date</button> --}}
+  
+
+
+  <div class="card mb-4">
+        <header class="card-header">
+                    <div class="row align-items-center">
+                        sort by:
+                        <div class="col-md-3 col-12 me-auto mb-md-0 mb-3">
+                            {{!-- <select class="form-select" id="sortMethod" onchange="sortSalesReport()">
+                                <option>Sort by:</option>
+                                <option> date </option>
+                                <option>week</option>
+                                <option>month</option>
+                            </select> --}}
+                            
+  
+    
+  
+  <div style="display: flex; " >
+    <a class="btn btn-secondary"  href="/admin/salesreport?id=date">date</a>
+    <a class="btn btn-secondary"  href="/admin/salesreport?id=week" style="margin-left:10px" >week</a>
+    <a class="btn btn-secondary"  href="/admin/salesreport?id=month" style="margin-left:10px"  >month</a>
+  </div>
+
+                        </div>
+
+{{!-- <div class="col-md-2 col-6">
+                            <input type="date" class="form-control">
+                        </div> --}}
+                        {{!-- <div class="col-md-2 col-6" > --}}
+                            {{!-- <select class="form-select">
+                                <option>Status</option>
+                                <option>Active</option>
+                                <option>Disabled</option>
+                                <option>Show all</option>
+                            </select> --}}
+                     {{!-- <button onclick="window.print()" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;"><i class="fas fa-print fa-2x text-right"></i></button>
+<button onclick="window.print()" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit; margin-left: 5px;"><i class="fas fa-file-pdf fa-2x"></i>
+</button>
+<button onclick="window.print()" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit; margin-left: 5px;"><i class="fas fa-file-excel fa-2x"></i></button> --}}
+                        {{!-- </div> --}}
+                    </div>
+                    
+                </header> <!-- card-header end// -->
+          <div class="card-body" >
+            {{!-- <h5 class="card-title">orders</h5> --}}
+            <div class="table-responsive">
+            <table class="table table-hover" id="example">
+              <thead>
+                <tr>
+            <td>Date</td>
+            <td>Name</td>
+            
+            <td>Address</td>
+            <td>Number</td>
+            <td>Amount</td>                 
+            <td>status</td>
+            <td>Payment Method</td>
+            
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+
+        
+
+          {{#each orders }}
+ 
+              <tr id="order_sort_table">
+                {{!-- <td>{{this.userId}}</td> --}}
+                <td> <span  class="limit-date-text"> {{this.date}}</span></td>
+                <td><b><span class="limit-date-text"> {{this.delivaryDetails.name}}</span></b></td>
+                {{!-- <td>{{this.delivaryDetails.email}}</td> --}}
+            <td><span class="limit-address-text">{{this.delivaryDetails.address}}</span></td>
+            <td>{{this.delivaryDetails.number}}</td>
+                <td>{{this.totalAmount}}</td>
+            {{#if this.delivered}}
+                                      
+                                      <td><span class="badge rounded-pill alert-success">{{this.status}}</span></td>
+                                      
+                                        {{else if this.shipped}}
+                                  
+                                       <td><span class="badge rounded-pill alert-info">{{this.status}}</span></td>
+                                        {{else if this.declined}}
+                                       
+                            <td><span class="badge rounded-pill alert-danger">{{this.status}}</span></td>
+                                        
+                                      {{else}}
+                                         <td><span class="badge rounded-pill alert-warning">{{this.status}}</span></td>
+                                        {{/if}}
+            <td><span  >{{this.paymentMethod}}</span></td>
+                
+              </tr>
+      
+              {{/each}}
+                    </tbody>
+            </table>
+            </div> <!-- table-responsive end// -->
+          </div> <!-- card-body end// -->
+    </div> <!-- card end// -->
+
+</section> <!-- content-main end// -->
+</main>
+
+
+<script type="text/javascript">
+  if(localStorage.getItem("darkmode")){
+    var body_el = document.body;
+    body_el.className += 'dark';
+  }
+
+
+
+</script>
+
+<script src="/javascripts/adjs/jquery-3.5.0.min.js"></script>
+<script src="/javascripts/adjs/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+<script src="/javascripts/adjs/scriptc619.js?v=1.0"></script>
+
+
+<style>
+
+    .limit-text {
+    display: block;
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+   text-overflow: ellipsis;
+  }
+
+   .limit-date-text {
+    display: block;
+    width: 104px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .limit-address-text {
+    display: block;
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable({
+            "footerCallback": function (row, data, start, end, display) {
+                var api = this.api(), data;
+
+                // Remove the formatting to get integer data for summation
+                var intVal = function (i) {
+                    return typeof i === 'string' ?
+                        i.replace(/[\$,]/g, '') * 1 :
+                        typeof i === 'number' ?
+                            i : 0;
+                };
+
+                // Total over all pages
+                total = api
+                    .column(4)
+                    .data()
+                    .reduce(function (a, b) {
+                        return intVal(a) + intVal(b);
+                    }, 0);
+
+              
+                // Update footer
+                $(api.column(4).footer()).html(
+                   ' ( $' + total + ' total)'
+                );
+            },
+            dom: 'Bfrtip',
+            buttons: [
+                'excel', 'pdf', 'print'
+            ],
+        });
+    });
+</script>

@@ -1,0 +1,59 @@
+ <div class="main-panel" style="margin:50px">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title">Order history</h3>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+            
+                </ol>
+              </nav>
+            </div>
+            <div class="row">
+              
+            
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                   
+                    <div class="table-responsive">
+                      <table class="table table-light">
+                        <thead>
+                          <tr>
+                            <th>user</th>
+                            <th>product</th>
+                            <th>quantity</th>
+                            <th>total</th>
+                            <th>payment method</th>
+                             <th>status</th>
+                             <th>order date</th>
+                              <th>Address</th>
+                               <th>Shipping status</th>
+                             
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {{#each  orderHistory}}
+                          <tr>
+                            {{!-- <td><img src="/{{this._id}}.jpg" style="width: 50px;height:50px"></td> --}}
+                            <td>{{this.deliveryDetails.name}}</td>
+                            <td>{{this.product.title}}</td>
+                            <td>{{this.quantity}}</td>
+                            <td>{{this.totalAmount}}</td>
+                             <td>{{this.paymentMethod}}</td>
+                             <td>{{this.status}}</td>
+                             <td>{{this.date}}</td>
+                             <td>{{this.deliveryDetails.address}}</td>
+                                  
+                                  <td><a class="btn btn-danger" href="/reject/{{this._id}}">cancel</a></td>
+                      
+                            
+                          </tr>
+                         {{/each}}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+          </div>

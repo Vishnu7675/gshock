@@ -1,0 +1,30 @@
+	<table class="table" style="margin-left: 260px;margin-top:150px">
+  <thead>
+    <tr>
+      <th scope="col">category</th>
+      <th scope="col">sub category</th>
+      {{!-- <th scope="col">category</th>
+      <th scope="col">price</th> --}}
+    </tr>
+  </thead>
+  <tbody>
+   {{#each allUsers}}
+    <tr>
+      {{!-- <th scope="row"></th> --}}
+
+      {{!-- <td><img src="/{{this._id}}.jpg" style="width: 55px;"></td> --}}
+      <td>{{this.title}}</td>
+	  <td>{{this.category}}</td>
+	  <td>RS.{{this.price}}</td>
+      {{!-- <td>{{this.number}}</td> --}}
+      <td>
+          <a href="/admin/delete-product/{{this._id}}" class="btn btn-danger" >delete</a>
+		   <a class="btn btn-warning" href="/admin/edit-product/{{this._id}}">Edit</a>
+          {{!-- <a class="btn btn-secondary" href="/admin/edit-user/{{this._id}}">edit</a> --}}
+      
+     
+    </tr>
+    {{/each}}
+   
+  </tbody>
+</table>

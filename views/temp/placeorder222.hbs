@@ -1,0 +1,631 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Molla - Bootstrap eCommerce Template</title>
+    <meta name="keywords" content="HTML5 Template">
+    <meta name="description" content="Molla - Bootstrap eCommerce Template">
+    <meta name="author" content="p-themes">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="massets/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="massets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="massets/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="massets/images/icons/site.html">
+    <link rel="mask-icon" href="massets/images/icons/safari-pinned-tab.svg" color="#666666">
+    <link rel="shortcut icon" href="massets/images/icons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Molla">
+    <meta name="application-name" content="Molla">
+    <meta name="msapplication-TileColor" content="#cc9966">
+    <meta name="msapplication-config" content="massets/images/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" href="massets/css/bootstrap.min.css">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="massets/css/style.css">
+	
+	{{!-- <script src="/tdk/scripts/jquery.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> --}}
+<script src="/tdk/scripts/bootstrap.js" type="text/javascript"></script>
+{{!-- <script src="/tdk/scripts/jquery.dataTables.js" type="text/javascript"></script> --}}
+<script src="/tdk/scripts/dataTables.bootstrap.js" type="text/javascript"></script>
+{{!-- <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script> --}}
+
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
+
+
+ {{!-- jf --}}
+
+ {{!-- ndfj --}}
+
+</head>
+<body>
+   <main class="main">
+	
+        	<div class="page-header text-center" style="background-image: url('massets/images/page-header-bg.jpg')">
+        		<div class="container">
+        			<h1 class="page-title">Checkout<span>Shop</span></h1>
+        		</div><!-- End .container -->
+        	</div><!-- End .page-header -->
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <div class="container">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                    </ol>
+                </div><!-- End .container -->
+            </nav><!-- End .breadcrumb-nav -->
+            {{#if address}}
+<div style="border: 2pz solid black; margin:150px;display:block" id="hide">
+	<h4 style="margin-left: 150px;">Saved Address</h4>
+	<form style="margin-left: 150px;" id="checkout-form1">
+		{{!-- {{#each address1}} --}}
+		<div>
+		{{#each address}}
+<div class="form-check" >
+	
+	
+  <input class="form-check-input" type="radio" name="savedAddress" id="exampleRadios1" value="{{this._id}}" checked>
+  <label class="form-check-label" for="exampleRadios1">
+   {{this.firstName}}
+    {{this.address}}
+    <a href="edit">edit</a>
+  </label>
+
+</div>
+  {{/each}}
+  </div>
+
+
+
+
+	                		<aside class="col-lg-3" style="float: right;">
+		                			<div class="summary">
+		                				<h3 class="summary-title">Your Order</h3><!-- End .summary-title -->
+
+		                				<table class="table table-summary">
+		                					<thead>
+		                						<tr>
+		                							<th>Product</th>
+		                							<th>Total</th>
+		                						</tr>
+		                					</thead>
+
+		                					<tbody>
+		                						{{!-- <tr>
+		                							<td><a href="#">Beige knitted elastic runner shoes</a></td>
+		                							<td>$84.00</td>
+		                						</tr> --}}
+
+		                						{{!-- <tr>
+		                							<td><a href="#">Blue utility pinafore denimdress</a></td>
+		                							<td>$76,00</td>
+		                						</tr> --}}
+		                						<tr class="summary-subtotal">
+		                							<td>Subtotal:</td>
+		                							<td>RS {{total}}</td>
+		                						</tr><!-- End .summary-subtotal -->
+		                						<tr>
+		                							<td>Shipping:</td>
+		                							<td>Free shipping</td>
+		                						</tr>
+		                						<tr class="summary-total">
+		                							<td>Total:</td>
+		                							<td id="totalvalue1">Rs {{total}}</td>
+		                						</tr>
+                                                <tr>
+                                                
+
+                                       
+                                                    
+                                                    </tr><!-- End .summary-total -->
+		                					</tbody>
+		                				</table><!-- End .table table-summary -->
+										<div class="form-check">
+  <input class="form-check-input" type="radio" name="payment-method" id="exampleRadios1" value="cod" checked>
+  <label class="form-check-label" for="exampleRadios1">
+   cash on delivery
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="payment-method" id="exampleRadios2" value="Razorpay" checked>
+  <label class="form-check-label" for="exampleRadios2">
+  Razor pay
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="payment-method" id="exampleRadios3" value="paypal" checked>
+  <label class="form-check-label" for="exampleRadios3">
+    Paypal
+  </label>
+</div>
+<div class="checkout-discount">
+            				                              <form id="coupon-form1">
+        						<input type="text" class="form-control" required name="couponcode" id="code">
+            					<label for="checkout-discount-input" class="text-truncate">Have a coupon? <span>Click here to enter your code</span></label>
+                               <button type="button" class="text-right btn btn-info mt-2" onclick="applysaved()">Apply Coupan</button>
+                               <p  id="couponstatus1"></p>
+            				</form>
+                                         
+            			</div>
+
+		                		<div class="col-sm-6" style="display:none;">
+		                					
+		                						<input type="text" class="form-control"  id="updatedPrice1" name="updatedPrice" required>
+		                					</div><!-- End .col-sm-6 -->
+                                  
+
+		                					<button type="button" class="btn btn-outline-primary-2 btn-order btn-block" onclick="checkout1()">submit</button>
+		                				
+		                				</button>
+		                			</div><!-- End .summary -->
+		                		</aside><!-- End .col-lg-3 -->
+    </form>
+    <a  onclick="showOrHideDiv()">new Address</a>
+</div>
+
+{{!-- new Address --}}
+   <div class="page-content" style="display: none;" id="show">
+            	<div class="checkout">
+	                <div class="container">
+            			<div class="checkout-discount">
+            				                              <form id="coupon-form">
+        						<input type="text" class="form-control" required name="couponcode" id="code">
+            					<label for="checkout-discount-input" class="text-truncate">Have a coupon? <span>Click here to enter your code</span></label>
+                               <button type="button" class="text-right btn btn-info mt-2" onclick="apply()">Apply Coupan</button>
+                               <p  id="couponstatus"></p>
+            				</form>
+                                         
+            			</div><!-- End .checkout-discount -->
+            			<form id="checkout-form">
+		                	<div class="row">
+		                		<div class="col-lg-9">
+		                			<h2 class="checkout-title">Billing Details</h2><!-- End .checkout-title -->
+		                				<div class="row">
+		                					<div class="col-sm-6">
+		                						<label>First Name *</label>
+		                						<input type="text" class="form-control" name="firstName" required>
+		                					</div><!-- End .col-sm-6 -->
+                                              	<div class="col-sm-6" style="display:none;">
+		                					
+		                						<input type="text" class="form-control"  id="updatedPrice" name="updatedPrice" required>
+		                					</div><!-- End .col-sm-6 -->
+
+		                					<div class="col-sm-6">
+		                						<label>Last Name *</label>
+		                						<input type="text" class="form-control" name="lastName" required>
+		                					</div><!-- End .col-sm-6 -->
+		                				</div><!-- End .row -->
+
+	            						<label>Company Name (Optional)</label>
+	            						<input type="text" class="form-control">
+
+	            						<label>Country *</label>
+	            						<input type="text" class="form-control" name="country" required>
+
+	            						<label>Street address *</label>
+	            						<input type="text" class="form-control" placeholder="House number and Street name" name="address" required>
+	            						{{!-- <input type="text" class="form-control" placeholder="Appartments, suite, unit etc ..." required> --}}
+
+	            						<div class="row">
+		                					<div class="col-sm-6">
+		                						<label>Town / City *</label>
+		                						<input type="text" class="form-control" name="city" required>
+		                					</div><!-- End .col-sm-6 -->
+
+		                					<div class="col-sm-6">
+		                						<label>State / County *</label>
+		                						<input type="text" class="form-control" name="state" required>
+		                					</div><!-- End .col-sm-6 -->
+		                				</div><!-- End .row -->
+
+		                				<div class="row">
+		                					<div class="col-sm-6">
+		                						<label>Postcode / ZIP *</label>
+		                						<input type="text" class="form-control" name="pincode" required>
+		                					</div><!-- End .col-sm-6 -->
+                                            	<div class="col-sm-6" style="display:none;">
+		                					
+		                						<input type="text" class="form-control"  id="updatedPrice" name="updatedPrice" required>
+		                					</div><!-- End .col-sm-6 -->
+
+
+		                					<div class="col-sm-6">
+		                						<label>Phone *</label>
+		                						<input type="tel" class="form-control" name="phonenumber" required>
+		                					</div><!-- End .col-sm-6 -->
+		                				</div><!-- End .row -->
+
+	                					<label>Email address *</label>
+	        							<input type="email" class="form-control" name="email" required>
+
+	        							<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="checkout-create-acc">
+											<label class="custom-control-label" for="checkout-create-acc">Create an account?</label>
+										</div><!-- End .custom-checkbox -->
+
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="checkout-diff-address">
+											<label class="custom-control-label" for="checkout-diff-address">Ship to a different address?</label>
+										</div><!-- End .custom-checkbox -->
+
+	                					<label>Order notes (optional)</label>
+	        							<textarea class="form-control" cols="30" rows="4" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
+		                		</div><!-- End .col-lg-9 -->
+		                		<aside class="col-lg-3">
+		                			<div class="summary">
+		                				<h3 class="summary-title">Your Order</h3><!-- End .summary-title -->
+
+		                				<table class="table table-summary">
+		                					<thead>
+		                						<tr>
+		                							<th>Product</th>
+		                							<th>Total</th>
+		                						</tr>
+		                					</thead>
+
+		                					<tbody>
+		                						{{!-- <tr>
+		                							<td><a href="#">Beige knitted elastic runner shoes</a></td>
+		                							<td>$84.00</td>
+		                						</tr> --}}
+
+		                						{{!-- <tr>
+		                							<td><a href="#">Blue utility pinafore denimdress</a></td>
+		                							<td>$76,00</td>
+		                						</tr> --}}
+		                						<tr class="summary-subtotal">
+		                							<td>Subtotal:</td>
+		                							<td>RS {{total}}</td>
+		                						</tr><!-- End .summary-subtotal -->
+		                						<tr>
+		                							<td>Shipping:</td>
+		                							<td>Free shipping</td>
+		                						</tr>
+		                						<tr class="summary-total">
+		                							<td>Total:</td>
+		                							<td id="totalvalue">Rs {{total}}</td>
+		                						</tr>
+                                                <tr>
+                                                
+
+                                       
+                                                    
+                                                    </tr><!-- End .summary-total -->
+		                					</tbody>
+		                				</table><!-- End .table table-summary -->
+										<div class="form-check">
+  <input class="form-check-input" type="radio" name="payment-method" id="exampleRadios1" value="cod" checked>
+  <label class="form-check-label" for="exampleRadios1">
+   cash on delivery
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="payment-method" id="exampleRadios2" value="Razorpay" checked>
+  <label class="form-check-label" for="exampleRadios2">
+  Razor pay
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="payment-method" id="exampleRadios3" value="paypal" checked>
+  <label class="form-check-label" for="exampleRadios3">
+    Paypal
+  </label>
+</div>
+
+                                  
+
+		                				<button type="button" class="btn btn-outline-primary-2 btn-order btn-block" onclick="checkingOut()">
+		                					<span class="btn-text">Place Order</span>
+		                					<span class="btn-hover-text">Proceed to Checkout</span>
+		                				</button>
+		                			</div><!-- End .summary -->
+		                		</aside><!-- End .col-lg-3 -->
+		                	</div><!-- End .row -->
+            			</form>
+	                </div><!-- End .container -->
+                </div><!-- End .checkout -->
+                 <a  onclick="showOrHideDiv()">saved Address</a>
+            </div><!-- End .page-content -->
+            
+{{!-- new address --}}
+			{{/if}}
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+        function checkingOut(){
+        
+        alert("Checkout")
+        // e.preventDefault()
+        $.ajax({
+            url:'/checkout',
+          data:$('#checkout-form').serialize(),
+            method:'post',
+            success:(response)=>{
+                alert("response next")
+              
+              console.log(response);
+                if(response.codSuccess){
+                    alert(response)
+                    location.href='/thanks'
+                
+             }
+             else if(response.isPaypal)
+             {
+                 alert(response.orderId)
+                  $.ajax({
+                
+            url:`/pay?orderId=${response.orderId}`,
+            
+            method:'post',
+			
+		     
+			success:(link)=>{
+                	location.href=link
+				
+			}
+                    })
+                
+ 
+             }
+             else{
+                    
+                    razorpayPayment(response)
+                }
+                function razorpayPayment(order){
+                    
+                    var options = {
+                        "key": "rzp_test_D9qPkXEj6U7pmM", // Enter the Key ID generated from the Dashboard
+                        "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                        "currency": "INR",
+                        "name": "G shock",
+                        "description": "Test Transaction",
+                        "image": "https://example.com/your_logo",
+                        "order_id": order.id, //This is a sample Order ID. Pass the id obtained in the response of Step 1
+                        "handler": function (response){
+                            alert(response.razorpay_payment_id);
+                            alert(response.razorpay_order_id);
+                            alert(response.razorpay_signature)
+    
+                            verifyPayment(response,order)
+                        },
+                        "prefill": {
+                            "name": "Vishnu A",
+                            "email": "vishnua7675@example.com",
+                            "contact": "9061657828"
+                        },
+                        "notes": {
+                            "address": "Razorpay Corporate Office"
+                        },
+                        "theme": {
+                            "color": "#3399cc"
+                        }
+                    };
+                    var rzp1 = new Razorpay(options);
+                    rzp1.on('payment.failed', function (response){
+                            alert(response.error.code);
+                            alert(response.error.description);
+                            alert(response.error.source);
+                            alert(response.error.step);
+                            alert(response.error.reason);
+                            alert(response.error.metadata.order_id);
+                            alert(response.error.metadata.payment_id);
+                    });
+                    rzp1.open();
+            }
+             function verifyPayment(payment,order){
+                $.ajax({
+                    url:'/verify-payment',
+                    data:{
+                        payment,
+                        order
+                    },
+                    method:'post',
+                    success:(response)=>{
+                        if(response.status){
+							location.href='/thanks'
+							
+                            
+                        }else{
+							
+                                   alert("payment failed")
+                            
+                        }
+                    }
+                })
+            }
+
+                }
+        })
+    
+    }
+    
+    function checkout1()
+    {
+        alert('saved Address')
+          $.ajax({
+            url:'/checkout',
+          data:$('#checkout-form1').serialize(),
+            method:'post',
+            success:(response)=>{
+                alert("response next")
+              
+              console.log(response);
+                if(response.codSuccess){
+                    alert(response)
+                    location.href='/thanks'
+                
+             }
+             else if(response.orderId)
+             {
+                 alert(response)
+                 console.log('response')
+               
+                 alert(orderId)
+              
+                  $.ajax({
+                
+               url:`/pay?orderID=${orderId}`,
+           
+            method:'post',
+			
+		     
+			success:(link)=>{
+                	location.href=link
+				
+			}
+                    })
+                
+ 
+             }
+             else{
+                    
+                    razorpayPayment(response)
+                }
+                function razorpayPayment(order){
+                    
+                    var options = {
+                        "key": "rzp_test_D9qPkXEj6U7pmM", // Enter the Key ID generated from the Dashboard
+                        "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                        "currency": "INR",
+                        "name": "G shock",
+                        "description": "Test Transaction",
+                        "image": "https://example.com/your_logo",
+                        "order_id": order.id, //This is a sample Order ID. Pass the id obtained in the response of Step 1
+                        "handler": function (response){
+                            alert(response.razorpay_payment_id);
+                            alert(response.razorpay_order_id);
+                            alert(response.razorpay_signature)
+    
+                            verifyPayment(response,order)
+                        },
+                        "prefill": {
+                            "name": "Vishnu A",
+                            "email": "vishnua7675@example.com",
+                            "contact": "9061657828"
+                        },
+                        "notes": {
+                            "address": "Razorpay Corporate Office"
+                        },
+                        "theme": {
+                            "color": "#3399cc"
+                        }
+                    };
+                    var rzp1 = new Razorpay(options);
+                    rzp1.on('payment.failed', function (response){
+                            alert(response.error.code);
+                            alert(response.error.description);
+                            alert(response.error.source);
+                            alert(response.error.step);
+                            alert(response.error.reason);
+                            alert(response.error.metadata.order_id);
+                            alert(response.error.metadata.payment_id);
+                    });
+                    rzp1.open();
+            }
+             function verifyPayment(payment,order){
+                $.ajax({
+                    url:'/verify-payment',
+                    data:{
+                        payment,
+                        order
+                    },
+                    method:'post',
+                    success:(response)=>{
+                        if(response.status){
+							location.href='/thanks'
+							
+                            
+                        }else{
+							
+                                   alert("payment failed")
+                            
+                        }
+                    }
+                })
+            }
+
+                }
+        })
+    }
+          function apply()
+        {
+            alert('apply ')
+          
+            $.ajax({
+                url:'/getcoupon',
+                 data:$('#coupon-form').serialize(),
+                method:'post',
+                success:(response)=>{
+                    alert(response)
+                    if(response)
+                    {
+                        document.getElementById('couponstatus').innerHTML='coupon applied'
+                        document.getElementById('totalvalue').innerHTML=response
+                        document.getElementById('updatedPrice').value=response
+                         document.getElementById('updatedPrice1').value=response
+                    }
+                    else
+                    { document.getElementById('couponstatus').innerHTML='invalid coupon'
+                        alert('invalid coupon')
+                    }
+                    
+                }
+            })
+           
+        }
+        
+         function applysaved()
+        {
+            alert('applysaved')
+          
+            $.ajax({
+                url:'/getcoupon',
+                 data:$('#coupon-form1').serialize(),
+                method:'post',
+                success:(response)=>{
+                    alert(response)
+                    if(response)
+                    {
+                        document.getElementById('couponstatus1').innerHTML='coupon applied'
+                        document.getElementById('totalvalue1').innerHTML=response
+                    
+                         document.getElementById('updatedPrice1').value=response
+                    }
+                    else
+                    { document.getElementById('couponstatus1').innerHTML='invalid coupon'
+                        alert('invalid coupon')
+                    }
+                    
+                }
+            })
+           
+        }
+
+        function showOrHideDiv() {
+        var newAddress = document.getElementById("hide");
+        var savedAddress = document.getElementById("show");
+        if (newAddress.style.display === "none") {
+            newAddress.style.display = "block";
+            savedAddress.style.display = "none";
+        }else{
+          newAddress.style.display = "none";
+            savedAddress.style.display = "block";
+        }
+    }
+</script>
+
+
+</body>
+<script src="massets/js/bootstrap.bundle.min.js"></script>
+    {{!-- <script src="massets/js/jquery.hoverIntent.min.js"></script> --}}
+    {{!-- <script src="massets/js/jquery.waypoints.min.js"></script> --}}
+    <script src="massets/js/superfish.min.js"></script>
+    <script src="massets/js/owl.carousel.min.js"></script>
+    <!-- Main JS File -->
+    <script src="massets/js/main.js"></script>

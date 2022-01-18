@@ -1,0 +1,63 @@
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+ <div class="main-panel" style="margin:50px">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title">Delivey Address</h3>
+              <a href="/addAddress">Add new Address</a>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+            
+                </ol>
+              </nav>
+            </div>
+            <div class="row">
+              
+            
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                   
+                    <div class="table-responsive">
+                      <table class="table table-light">
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>phonenumber</th>
+
+                           
+                             
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {{#each address}}
+                          <tr>
+                            {{!-- <td><img src="/{{this._id}}.jpg" style="width: 50px;height:50px"></td> --}}
+                            <td>{{this.firstName}}</td>
+                             <td>{{this.address}}</td>
+                             <td>{{this.phonenumber}}</td>
+                     
+                          <td>
+                              {{!-- <a href="/admin/delete-product/{{this._id}}" class="btn btn-danger" >delete</a> --}}
+                                   <button class="btn btn-warning" onclick="msg2('{{this._id}}')" >delete</button>
+                                     {{!-- <a class="btn btn-warning" href="/deleteAddress/{{this._id}}">delete</a> --}}
+                             <a class="btn btn-warning" href="/editaddress/{{this._id}}">Edit</a>
+                            </td>
+                      
+                            
+                          </tr>
+                         {{/each}}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+          </div>

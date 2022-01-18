@@ -1,0 +1,78 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  
+  <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"><a href="/admin/addcoupon"><i class="bx bx-right-arrow-alt"></i>Add New Coupon</a></h3>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  {{!-- <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"> Basic tables </li> --}}
+                </ol>
+              </nav>
+            </div>
+            <div class="row">
+              
+            
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    {{!-- <h4 class="card-title">Inverse table</h4>
+                    <p class="card-description"> Add class <code>.table-dark</code> --}}
+                    </p>
+                    <div class="table-responsive">
+                      <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th>coupon code</th>
+                               <th>ezpiry</th>
+                            <th>discount</th>
+                          
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {{#each couponData}}
+                          <tr>
+                            
+                            <td>{{this.couponCode}}</td>
+                            <td>{{this.expiry}}</td>
+                            <td>{{this.discount}}%</td>
+                            
+                            {{#if this.expired }}
+                            <td><span class="badge rounded-pill alert-danger">expired</span></td>
+                            {{else}}
+                             <td><span class="badge rounded-pill alert-success">active</span></td>
+                             {{/if}}
+                            <td>
+                              {{!-- <a href="/admin/delete-product/{{this._id}}" class="btn btn-danger" >delete</a> --}}
+                                   <button class="btn btn-warning" onclick="msg5('{{this._id}}')" >delete</button>
+                             {{!-- <a class="btn btn-warning" href="/admin/edit-product/{{this._id}}">Edit</a> --}}
+                            </td>
+                            
+                            
+                          </tr>
+                         {{/each}}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

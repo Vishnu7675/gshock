@@ -1,0 +1,85 @@
+<script>//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css</script>
+<script>//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js</script>
+ <div class="main-panel" style="margin:50px">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title">Order Management</h3>
+              
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+            
+                </ol>
+              </nav>
+            </div>
+            <div class="row">
+              
+            
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                   
+                    <div class="table-responsive">
+                      <table class="table table-light">
+                        <thead>
+                          <tr>
+                            <th>user</th>
+                            <th>product</th>
+                            <th>quantity</th>
+                            <th>total</th>
+                            <th>payment method</th>
+                             <th>status</th>
+                             <th>order date</th>
+                            
+                              {{!-- <th>Address</th> --}}
+                             
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {{#each  orders}}
+                          <tr>
+                            {{!-- <td><img src="/{{this._id}}.jpg" style="width: 50px;height:50px"></td> --}}
+                            <td>{{this.delivaryDetails.name}}</td>
+                            <td>{{this.product.title}}</td>
+                            <td>{{this.quantity}}</td>
+                            <td>{{this.totalAmount}}</td>
+                             <td>{{this.paymentMethod}}</td>
+                             <td>{{this.status}}</td>
+                             <td>{{this.date}}</td>
+                              {{!-- <td>{{this.shipped}}</td> --}}
+                             {{!-- <td>{{this.deliveryDetails.address}}</td> --}}
+                                        {{!-- <td>
+                             
+                                {{#if this.blockUsers}}
+          <a class="btn btn-warning"  href="/admin/unblock-user/{{this._id}}">reject</a>
+          {{else}}
+          <a class="btn btn-success" href="/admin/block-user/{{this._id}}">approve</a>
+          {{/if}}
+                            </td> --}}
+                            <td>
+                                <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ Action
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="/admin/approve/{{this._id}}">Appprove</a>
+    <a class="dropdown-item" href="/admin/reject/{{this._id}}">cancel</a>
+    <a class="dropdown-item" href="/admin/delivered/{{this._id}}">delivered</a>
+  </div>
+</div>
+                            </td>
+                            
+                          </tr>
+                         {{/each}}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          <script>
+            $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+          </script>

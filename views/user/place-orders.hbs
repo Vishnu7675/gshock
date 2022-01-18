@@ -1,0 +1,338 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Molla - Bootstrap eCommerce Template</title>
+    <meta name="keywords" content="HTML5 Template">
+    <meta name="description" content="Molla - Bootstrap eCommerce Template">
+    <meta name="author" content="p-themes">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="massets/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="massets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="massets/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="massets/images/icons/site.html">
+    <link rel="mask-icon" href="massets/images/icons/safari-pinned-tab.svg" color="#666666">
+    <link rel="shortcut icon" href="massets/images/icons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Molla">
+    <meta name="application-name" content="Molla">
+    <meta name="msapplication-TileColor" content="#cc9966">
+    <meta name="msapplication-config" content="massets/images/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" href="massets/css/bootstrap.min.css">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="massets/css/style.css">
+	    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+	{{!-- <script src="/tdk/scripts/jquery.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> --}}
+<script src="/tdk/scripts/bootstrap.js" type="text/javascript"></script>
+{{!-- <script src="/tdk/scripts/jquery.dataTables.js" type="text/javascript"></script> --}}
+<script src="/tdk/scripts/dataTables.bootstrap.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+ {{!-- jf --}}
+
+ {{!-- ndfj --}}
+
+</head>
+   <main class="main">
+	
+        	<div class="page-header text-center" style="background-image: url('massets/images/page-header-bg.jpg')">
+        		<div class="container">
+        			<h1 class="page-title">Checkout<span>Shop</span></h1>
+        		</div><!-- End .container -->
+        	</div><!-- End .page-header -->
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <div class="container">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                    </ol>
+                </div><!-- End .container -->
+            </nav><!-- End .breadcrumb-nav -->
+			
+	{{!-- saved address --}}
+	<form style="margin-left: 150px;">
+		{{!-- {{#each address1}} --}}
+
+{{!-- {{/each}} --}}
+
+</form>
+{{!-- saved address --}}
+            <div class="page-content">
+            	<div class="checkout">
+	                <div class="container">
+            			<div class="checkout-discount">
+            		
+            			</div><!-- End .checkout-discount -->
+            			<form id="checkout-form" method="post">
+		                	<div class="row">
+		                		<div class="col-lg-9">
+		                			<h2 class="checkout-title">Billing Details</h2><!-- End .checkout-title -->
+		                														<div class="form-check">
+  <input class="form-check-input" type="radio" name="payment-method" id="exampleRadios1" value="cod" checked>
+  <label class="form-check-label" for="exampleRadios1">
+   cash on delivery
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="payment-method" id="exampleRadios2" value="Razorpay" checked>
+  <label class="form-check-label" for="exampleRadios2">
+  Razor pay
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="payment-method" id="exampleRadios3" value="paypal" checked>
+  <label class="form-check-label" for="exampleRadios3">
+Paypal
+  </label>
+</div>
+
+		                		<aside class="col-lg-3">
+		                			<div class="summary">
+		                				<h3 class="summary-title">Your Order</h3><!-- End .summary-title -->
+
+		                				<table class="table table-summary">
+		                					<thead>
+		                						<tr>
+		                							<th>Product</th>
+		                							<th>Total</th>
+		                						</tr>
+		                					</thead>
+
+		                					<tbody>
+		                						<tr>
+		                							<td><a href="#">Beige knitted elastic runner shoes</a></td>
+		                							<td>$84.00</td>
+		                						</tr>
+
+		                						<tr>
+		                							<td><a href="#">Blue utility pinafore denimdress</a></td>
+		                							<td>$76,00</td>
+		                						</tr>
+		                						<tr class="summary-subtotal">
+		                							<td>Subtotal:</td>
+		                							<td>RS {{total}}</td>
+		                						</tr><!-- End .summary-subtotal -->
+		                						<tr>
+		                							<td>Shipping:</td>
+		                							<td>Free shipping</td>
+		                						</tr>
+		                						<tr class="summary-total">
+		                							<td>Total:</td>
+		                							<td>Rs {{total}}</td>
+		                						</tr><!-- End .summary-total -->
+		                					</tbody>
+		                				</table><!-- End .table table-summary -->
+										<div class="form-check">
+  <input class="form-check-input" type="radio" name="payment-method" id="exampleRadios1" value="cod" checked>
+  <label class="form-check-label" for="exampleRadios1">
+   cash on delivery
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="payment-method" id="exampleRadios2" value="Razorpay" checked>
+  <label class="form-check-label" for="exampleRadios2">
+  Razor pay
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="payment-method" id="exampleRadios3" value="paypal" checked>
+  <label class="form-check-label" for="exampleRadios3">
+   paypal
+  </label>
+</div>
+
+		                				{{!-- <div class="accordion-summary" id="accordion-payment">
+										    <div class="card">
+										        <div class="card-header" id="heading-1">
+										            <h2 class="card-title">
+										                <a role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+										                    Direct bank transfer
+										                </a>
+										            </h2>
+										        </div><!-- End .card-header -->
+										        <div id="collapse-1" class="collapse show" aria-labelledby="heading-1" data-parent="#accordion-payment">
+										            <div class="card-body">
+										                Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
+										            </div><!-- End .card-body -->
+										        </div><!-- End .collapse -->
+										    </div><!-- End .card -->
+
+										    <div class="card">
+										        <div class="card-header" id="heading-2">
+										            <h2 class="card-title">
+										                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+										                    Check payments
+										                </a>
+										            </h2>
+										        </div><!-- End .card-header -->
+										        <div id="collapse-2" class="collapse" aria-labelledby="heading-2" data-parent="#accordion-payment">
+										            <div class="card-body">
+										                Ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. 
+										            </div><!-- End .card-body -->
+										        </div><!-- End .collapse -->
+										    </div><!-- End .card -->
+
+										    <div class="card">
+										        <div class="card-header" id="heading-3">
+										            <h2 class="card-title">
+										                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+										                    Cash on delivery
+										                </a>
+										            </h2>
+										        </div><!-- End .card-header -->
+										        <div id="collapse-3" class="collapse" aria-labelledby="heading-3" data-parent="#accordion-payment">
+										            <div class="card-body">Quisque volutpat mattis eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. 
+										            </div><!-- End .card-body -->
+										        </div><!-- End .collapse -->
+										    </div><!-- End .card -->
+
+										    <div class="card">
+										        <div class="card-header" id="heading-4">
+										            <h2 class="card-title">
+										                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+										                    PayPal <small class="float-right paypal-link">What is PayPal?</small>
+										                </a>
+										            </h2>
+										        </div><!-- End .card-header -->
+										        <div id="collapse-4" class="collapse" aria-labelledby="heading-4" data-parent="#accordion-payment">
+										            <div class="card-body">
+										                Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.
+										            </div><!-- End .card-body -->
+										        </div><!-- End .collapse -->
+										    </div><!-- End .card -->
+
+										    <div class="card">
+										        <div class="card-header" id="heading-5">
+										            <h2 class="card-title">
+										                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+										                    Credit Card (Stripe)
+										                    <img src="massets/images/payments-summary.png" alt="payments cards">
+										                </a>
+										            </h2>
+										        </div><!-- End .card-header -->
+										        <div id="collapse-5" class="collapse" aria-labelledby="heading-5" data-parent="#accordion-payment">
+										            <div class="card-body"> Donec nec justo eget felis facilisis fermentum.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Lorem ipsum dolor sit ame.
+										            </div><!-- End .card-body -->
+										        </div><!-- End .collapse -->
+										    </div><!-- End .card -->
+										</div><!-- End .accordion --> --}}
+
+		                				<button type="submit" class="btn btn-outline-primary-2 btn-order btn-block" onclick="checkout()">
+		                					<span class="btn-text">Place Order</span>
+		                					<span class="btn-hover-text">Proceed to Checkout</span>
+		                				</button>
+		                			</div><!-- End .summary -->
+		                		</aside><!-- End .col-lg-3 -->
+		                	</div><!-- End .row -->
+            			</form>
+	                </div><!-- End .container -->
+                </div><!-- End .checkout -->
+            </div><!-- End .page-content -->
+        </main><!-- End .main -->
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		 <script>
+			 function checkout()
+			 {
+				 alert('hdhbfd')
+
+				  $.ajax({
+					 url:'/place-order',
+					
+				     method:'post',
+					  data:$('#checkout-form').serialize(),
+					  
+					 
+					 success:(response)=>{
+						 alert('payment ui')
+						
+						 if(response.codsuccess)
+						 {
+							 alert('hello')
+							 location.href='/thanks'
+						 }
+						 else
+						 {
+							 alert('razorpay')
+							razorpayPayment(response)
+						 }
+						 		 function razorpayPayment(order){
+		                      	 
+				 var options = {
+    "key": 'rzp_test_D9qPkXEj6U7pmM', // Enter the Key ID generated from the Dashboard
+    "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "Acme Corp",
+    "description": "Test Transaction",
+    "image": "https://example.com/your_logo",
+    "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "handler": function (response){
+        alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature);
+		verifyPayment(response,order)
+    },
+    "prefill": {
+        "name": "Gaurav Kumar",
+        "email": "gaurav.kumar@example.com",
+        "contact": "9999999999"
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+};
+   var rzp1 = new Razorpay(options);
+  rzp1.open();
+
+			 }
+ function verifyPayment(payment,order)
+			 {
+				 $.ajax({
+					 url:'/verify-payment',
+					 data:{
+						 payment,
+						 order
+					 },
+					 method:'post',
+					 success:(response)=>{
+						 if(response.status)
+						 {
+							 location.href ='/thanks'
+						 }
+						 else{
+							 alert('payment faild')
+						 }
+					 }
+				 })
+			 }
+			 
+					 }
+
+
+				 })
+			 }
+			
+	
+
+			
+		 </script>
+   {{!-- <script src="massets/js/jquery.min.js"></script> --}}
+    <script src="massets/js/bootstrap.bundle.min.js"></script>
+    {{!-- <script src="massets/js/jquery.hoverIntent.min.js"></script> --}}
+    {{!-- <script src="massets/js/jquery.waypoints.min.js"></script> --}}
+    <script src="massets/js/superfish.min.js"></script>
+    <script src="massets/js/owl.carousel.min.js"></script>
+    <!-- Main JS File -->
+    <script src="massets/js/main.js"></script>

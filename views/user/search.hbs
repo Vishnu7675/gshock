@@ -1,0 +1,241 @@
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <div class="ec-slider swiper-container main-slider-nav main-slider-dot">
+
+         <section class="section ec-product-tab section-space-p">
+        <div class="container">
+            <div class="row">
+                {{!-- <div class="col-md-12 text-center">
+                    <div class="section-title">
+                        <h2 class="ec-bg-title">Our Top Collection</h2>
+                        <h2 class="ec-title">Our Top Collection</h2>
+                        <p class="sub-title">Browse The Collection of Top Products</p>
+                    </div>
+                </div> --}}
+
+                <!-- Tab Start -->
+                {{!-- <div class="col-md-12 text-center">
+                    <ul class="ec-pro-tab-nav nav justify-content-center">
+                        <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#tab-pro-for-all">For
+                                All</a></li>
+                        <li class="nav-item"><a class="nav-link"  href="/mens-collection">For
+                                Men</a></li>
+                        <li class="nav-item"><a class="nav-link"  href="/womens-collection">For
+                                Women</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-pro-for-child">For
+                                Children</a></li>
+                    </ul>
+                </div> --}}
+                <!-- Tab End -->
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="tab-content">
+                        <!-- 1st Product tab start -->
+                        <div class="tab-pane fade show active" id="tab-pro-for-all">
+                            <div class="row">
+                                <!-- Product Content -->
+                                {{#each product}}
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-6  ec-product-content" data-animation="fadeIn">
+                                    <div class="ec-product-inner">
+                                        <div class="ec-pro-image-outer">
+                                            <div class="ec-pro-image">
+                                                <a href="product-left-sidebar.html" class="image">
+                                                    <img class="main-image"
+                                                        src="{{this._id}}.jpg" alt="Product"  width="150px" height="auto"/>
+                                                    {{!-- <img class="hover-image"
+                                                        src="gassets/images/product-image/6_2.jpg" alt="Product" /> --}}
+                                                </a>
+                                                <span class="percentage">20%</span>
+                                                <a href="#" class="quickview" data-link-action="quickview"
+                                                    title="Quick view" data-bs-toggle="modal"
+                                                    data-bs-target="#ec_quickview_modal"><img
+                                                        src="gassets/images/icons/quickview.svg" class="svg_img pro_svg"
+                                                        alt="" /></a>
+                                                <div class="ec-pro-actions">
+                                                    <a href="compare.html" class="ec-btn-group compare"
+                                                        title="Compare"><img src="gassets/images/icons/compare.svg"
+                                                            class="svg_img pro_svg" alt="" /></a>
+                                                            <a  class="add-to-cart">
+                                                            
+                                                   <img
+                                                            src="gassets/images/icons/cart.svg" class="svg_img pro_svg"
+                                                            alt=""   onclick="addToCart('{{this._id}}')" /> Add To Cart</a>
+                                                    <a class="ec-btn-group wishlist" title="Wishlist"><img
+                                                            src="gassets/images/icons/wishlist.svg"
+                                                            class="svg_img pro_svg" alt=""  onclick="addTowishlist('{{this._id}}')"/></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ec-pro-content">
+                                            <h5 class="ec-pro-title"><a href="/view-product?product={{this._id}}">{{this.title}}</a></h5>
+                                            <div class="ec-pro-rating">
+                                                <i class="ecicon eci-star fill"></i>
+                                                <i class="ecicon eci-star fill"></i>
+                                                <i class="ecicon eci-star fill"></i>
+                                                <i class="ecicon eci-star fill"></i>
+                                                <i class="ecicon eci-star"></i>
+                                            </div>
+                                            <span class="ec-price">
+                                                
+                                                <span class="new-price">Rs {{this.price}}</span>
+                                            </span>
+                                            <div class="ec-pro-option">
+                                                {{!-- <div class="ec-pro-color">
+                                                    <span class="ec-pro-opt-label">Color</span>
+                                                    <ul class="ec-opt-swatch ec-change-img">
+                                                        <li class="active"><a href="#" class="ec-opt-clr-img"
+                                                                data-src="gassets/images/product-image/6_1.jpg"
+                                                                data-src-hover="gassets/images/product-image/6_1.jpg"
+                                                                data-tooltip="Gray"><span
+                                                                    style="background-color:#e8c2ff;"></span></a></li>
+                                                        <li><a href="#" class="ec-opt-clr-img"
+                                                                data-src="gassets/images/product-image/6_2.jpg"
+                                                                data-src-hover="gassets/images/product-image/6_2.jpg"
+                                                                data-tooltip="Orange"><span
+                                                                    style="background-color:#9cfdd5;"></span></a></li>
+                                                    </ul>
+                                                </div> --}}
+                                                {{!-- <div class="ec-pro-size">
+                                                    <span class="ec-pro-opt-label">Size</span>
+                                                    <ul class="ec-opt-size">
+                                                        <li class="active"><a href="#" class="ec-opt-sz"
+                                                                data-old="$25.00" data-new="$20.00"
+                                                                data-tooltip="Small">S</a></li>
+                                                        <li><a href="#" class="ec-opt-sz" data-old="$27.00"
+                                                                data-new="$22.00" data-tooltip="Medium">M</a></li>
+                                                        <li><a href="#" class="ec-opt-sz" data-old="$30.00"
+                                                                data-new="$25.00" data-tooltip="Large">X</a></li>
+                                                        <li><a href="#" class="ec-opt-sz" data-old="$35.00"
+                                                                data-new="$30.00" data-tooltip="Extra Large">XL</a></li>
+                                                    </ul>
+                                                </div> --}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                              {{/each}}
+                               
+                             
+                              
+
+                                {{!-- <div class="col-sm-12 shop-all-btn"><a href="shop-left-sidebar-col-3.html">Shop All Collection</a></div> --}}
+                            </div>
+                        </div>
+                        <!-- ec 1st Product tab end -->
+                        <!-- ec 2nd Product tab start -->
+                       
+                        <!-- ec 2nd Product tab end -->
+                        <!-- ec 3rd Product tab start -->
+                       
+                        <!-- ec 3rd Product tab end -->
+                        <!-- ec 4th Product tab start -->
+                        
+                        <!-- ec 4th Product tab end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      function addToCart(proId){
+       
+        addCartalert()
+          $.ajax({
+              url:'/add-to-cart/'+proId,
+              method:'get',
+              success:(response)=>{
+                  if(response.status){
+                      
+                      
+                      let count=$('#cart-count').html()
+                      count=parseInt(count)+1
+                      $("#cart-count").html(count)
+                  }
+
+              }
+          })
+      }
+
+
+    </script>
+    {{!-- wish list --}}
+        <script>
+      function addTowishlist(proId){
+       
+          addWishlist()
+          $.ajax({
+              url:'/add-to-wishlist/'+proId,
+              method:'post',
+              success:(response)=>{
+                 console.log('success')
+
+              }
+          })
+      }
+      
+
+    </script>
+  
+<script>
+   function addCartalert()
+{
+ 
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'item added to cart',
+    showConfirmButton: false,
+    timer: 1500,
+    
+    
+  })
+ 
+}
+   function addWishlist()
+{
+ 
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'item added to Wishlist',
+    showConfirmButton: false,
+    timer: 1500,
+    
+    
+  })
+ 
+}
+
+</script>
+{{!-- wish list --}}
+  
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="gassets/js/vendor/jquery-3.5.1.min.js"></script>
+<script src="gassets/js/vendor/popper.min.js"></script>
+<script src="gassets/js/vendor/bootstrap.min.js"></script>
+<script src="gassets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+<script src="gassets/js/vendor/modernizr-3.11.2.min.js"></script>
+
+<!--Plugins JS-->
+<script src="gassets/js/plugins/swiper-bundle.min.js"></script>
+<script src="gassets/js/plugins/countdownTimer.min.js"></script>
+<script src="gassets/js/plugins/scrollup.js"></script>
+<script src="gassets/js/plugins/jquery.zoom.min.js"></script>
+<script src="gassets/js/plugins/slick.min.js"></script>
+<script src="gassets/js/plugins/infiniteslidev2.js"></script>
+<script src="gassets/js/vendor/jquery.magnific-popup.min.js"></script>
+<script src="gassets/js/plugins/jquery.sticky-sidebar.js"></script>
+
+<!-- Main Js -->
+<script src="gassets/js/vendor/index.js"></script>
+<script src="gassets/js/main.js"></script>

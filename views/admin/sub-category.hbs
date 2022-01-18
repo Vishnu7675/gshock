@@ -1,0 +1,95 @@
+
+  
+  
+  <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                 
+              {{#with categoryDetail}}
+ <a style="margin-left: 20vw;" class="btn btn-warning" href="/admin/add-sub-category/{{_id}}">Add sub Category</a>
+ {{/with}}
+                </ol>
+              </nav>
+            </div>
+            <div class="row">
+              
+            
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Inverse table</h4>
+                    <p class="card-description"> Add class <code>.table-dark</code>
+                    </p>
+                    <div class="table-responsive">
+                      <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th>Sub category</th>
+                            {{!-- <th>name</th>
+                            <th>category</th>
+                            <th>price</th> --}}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {{#each subCategory}}
+                          <tr>
+                            
+                               <td>{{this.name}}</td>
+                           
+                            <td>
+                                 <a href="/admin/deletesubcategory?sub={{this.id}}&name={{this.name}}" class="btn btn-danger" >delete</a>
+                                 <a href="/admin/editsubcategory?sub={{this.id}}&name={{this.name}}" class="btn btn-warning" >edit</a>
+                         
+                            </td>
+                            
+                          </tr>
+                         {{/each}}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

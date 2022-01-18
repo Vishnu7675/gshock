@@ -1,0 +1,193 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Molla - Bootstrap eCommerce Template</title>
+    <meta name="keywords" content="HTML5 Template">
+    <meta name="description" content="Molla - Bootstrap eCommerce Template">
+    <meta name="author" content="p-themes">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="massets/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="massets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="massets/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="massets/images/icons/site.html">
+    <link rel="mask-icon" href="massets/images/icons/safari-pinned-tab.svg" color="#666666">
+    <link rel="shortcut icon" href="massets/images/icons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Molla">
+    <meta name="application-name" content="Molla">
+    <meta name="msapplication-TileColor" content="#cc9966">
+    <meta name="msapplication-config" content="massets/images/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" href="massets/css/bootstrap.min.css">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="massets/css/style.css">
+	{{!-- <script src="/tdk/scripts/jquery.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> --}}
+<script src="/tdk/scripts/bootstrap.js" type="text/javascript"></script>
+{{!-- <script src="/tdk/scripts/jquery.dataTables.js" type="text/javascript"></script> --}}
+<script src="/tdk/scripts/dataTables.bootstrap.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+ {{!-- jf --}}
+
+ {{!-- ndfj --}}
+
+</head>
+   <main class="main">
+	
+        	<div class="page-header text-center" style="background-image: url('massets/images/page-header-bg.jpg')">
+        		<div class="container">
+        			<h1 class="page-title">Edit Address</h1>
+        		</div><!-- End .container -->
+        	</div><!-- End .page-header -->
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <div class="container">
+                    {{!-- <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                    </ol> --}}
+                </div><!-- End .container -->
+            </nav><!-- End .breadcrumb-nav -->
+			
+	{{!-- saved address --}}
+	<form style="margin-left: 150px;">
+		{{!-- {{#each address1}} --}}
+
+{{!-- {{/each}} --}}
+
+</form>
+{{!-- saved address --}}
+            <div class="page-content">
+            	<div class="checkout">
+	                <div class="container">
+            			<div class="checkout-discount">
+            				{{!-- <form >
+        						<input type="text" class="form-control" required id="checkout-discount-input">
+            					<label for="checkout-discount-input" class="text-truncate">Have a coupon? <span>Click here to enter your code</span></label>
+            				</form> --}}
+            			</div><!-- End .checkout-discount -->
+                    {{#each address}}
+            			<form id="checkout-form" method="post" action="/updateAddress/{{this._id}}" enctype="multipart/form-data">
+		                	<div class="row">
+		                		<div class="col-lg-9">
+		                			<h2 class="checkout-title">Billing Details</h2><!-- End .checkout-title -->
+		                				<div class="row">
+		                					<div class="col-sm-6">
+		                						<label>First Name *</label>
+		                						<input type="text" class="form-control" name="firstName" value="{{this.firstName}}" required>
+		                					</div><!-- End .col-sm-6 -->
+
+		                					<div class="col-sm-6">
+		                						<label>Last Name *</label>
+		                						<input type="text" class="form-control" name="lastName" value="{{this.lastName}}" required>
+		                					</div><!-- End .col-sm-6 -->
+		                				</div><!-- End .row -->
+
+	            						<label>Company Name (Optional)</label>
+	            						<input type="text" class="form-control">
+
+	            						<label>Country *</label>
+	            						<input type="text" class="form-control" name="country" value="{{this.country}}" required>
+
+	            						<label>Street address *</label>
+	            						<input type="text" class="form-control" placeholder="House number and Street name" name="address"  value="{{this.address}}"required>
+	            						{{!-- <input type="text" class="form-control" placeholder="Appartments, suite, unit etc ..." required> --}}
+
+	            						<div class="row">
+		                					<div class="col-sm-6">
+		                						<label>Town / City *</label>
+		                						<input type="text" class="form-control" name="city" value="{{this.city}}" required>
+		                					</div><!-- End .col-sm-6 -->
+
+		                					<div class="col-sm-6">
+		                						<label>State / County *</label>
+		                						<input type="text" class="form-control" name="state" value="{{this.state}}" required>
+		                					</div><!-- End .col-sm-6 -->
+		                				</div><!-- End .row -->
+
+		                				<div class="row">
+		                					<div class="col-sm-6">
+		                						<label>Postcode / ZIP *</label>
+		                						<input type="text" class="form-control" name="pincode" value="{{this.pincode}}" required>
+		                					</div><!-- End .col-sm-6 -->
+
+		                					<div class="col-sm-6">
+		                						<label>Phone *</label>
+		                						<input type="tel" class="form-control" name="phonenumber" value="{{this.phonenumber}}" required>
+		                					</div><!-- End .col-sm-6 -->
+		                				</div><!-- End .row -->
+
+	                					<label>Email address *</label>
+	        							<input type="email" class="form-control" name="email" value="{{this.email}}" required>
+
+	        							<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="checkout-create-acc">
+											<label class="custom-control-label" for="checkout-create-acc">Create an account?</label>
+										</div><!-- End .custom-checkbox -->
+
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="checkout-diff-address">
+											<label class="custom-control-label" for="checkout-diff-address">Ship to a different address?</label>
+										</div><!-- End .custom-checkbox -->
+
+	                					<label>Order notes (optional)</label>
+	        							<textarea class="form-control" cols="30" rows="4" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
+		                		</div><!-- End .col-lg-9 -->
+		                		<button type="submit" class="btn btn-primary">update</button>
+		                	</div><!-- End .row -->
+            			</form>
+                        {{/each}}
+	                </div><!-- End .container -->
+                </div><!-- End .checkout -->
+            </div><!-- End .page-content -->
+        </main><!-- End .main -->
+		<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+{{!-- jquery --}}
+
+<script>
+$(document).ready(function(){
+  $("#checkout-form").validate({
+    rules:{
+    firstName:{
+       minlength:6
+
+    },
+    lastName:{
+      required:true
+    },
+    address:{
+      required:true
+    },
+    pincode:{
+      required:true,
+      minlength:6,
+       digits:true
+    },
+    phonenumber:{
+      required:true,
+      minlength:6,
+       digits:true
+    }
+    }
+  })
+
+})
+</script>
+
+
+   {{!-- <script src="massets/js/jquery.min.js"></script> --}}
+    <script src="massets/js/bootstrap.bundle.min.js"></script>
+    {{!-- <script src="massets/js/jquery.hoverIntent.min.js"></script> --}}
+    {{!-- <script src="massets/js/jquery.waypoints.min.js"></script> --}}
+    <script src="massets/js/superfish.min.js"></script>
+    <script src="massets/js/owl.carousel.min.js"></script>
+    <!-- Main JS File -->
+    <script src="massets/js/main.js"></script>

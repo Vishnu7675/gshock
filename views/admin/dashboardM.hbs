@@ -1,0 +1,265 @@
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+#myChart{
+  position:relative;
+       top: 316px;
+    left: -671px;
+   width: 575px;
+   height: 500px;
+}
+#myChart2{
+  position:relative;
+       top: 31px;
+    left: -84px;
+}
+#myChart3{
+  position:relative;
+       top: 97px;
+    left: -653px;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 200px;
+  border-radius: 5px;
+  height: 111px;
+
+ 
+    
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+#card1{
+  position: relative;
+    top: 144px;
+    left: 59px;
+   
+}
+#card2{
+  position: relative;
+   top: 144px;
+   left: 147px;
+}
+   
+
+#card3{
+  position: relative;
+  top: 144px;
+    left: 273px;
+   
+}
+#card4{
+  position: relative;
+  top: 144px;
+    left: 376px;
+   
+}
+</style>
+<body>
+     {{!-- cards --}}
+     <div class="card" id="card1">
+  {{!-- <img src="img_avatar2.png" alt="Avatar" style="width:100%"> --}}
+  <div class="container">
+    <br>
+    <h4><b>Total Revenue</b></h4> 
+    <p>Rs.{{totalRevenue}}</p> 
+  </div>
+</div>
+
+     <div class="card" id="card2">
+  {{!-- <img src="img_avatar2.png" alt="Avatar" style="width:100%"> --}}
+  <div class="container">
+    <h4><b>Total number of order</b></h4> 
+    <p>{{totalOrder}}</p> 
+  </div>
+</div>
+
+
+     <div class="card" id="card3">
+  {{!-- <img src="img_avatar2.png" alt="Avatar" style="width:100%"> --}}
+  <div class="container">
+    <h4><b>Total order Placed</b></h4> 
+    <p>{{placedCount}}</p> 
+  </div>
+</div>
+              <div class="card" id="card4">
+  {{!-- <img src="img_avatar2.png" alt="Avatar" style="width:100%"> --}}
+  <div class="container">
+    <h4><b>total number of products</b></h4> 
+    <p>{{totalProduct}}</p> 
+  </div>
+</div>
+           
+                       {{!-- cards --}}
+
+    <div >
+        <canvas id="myChart" ></canvas>
+        <div>
+              <div>
+                 <canvas id="myChart2" ></canvas>
+              </div>
+       <div>
+              <canvas id="myChart3"></canvas>
+       </div>
+   
+      
+      <script>
+     
+      
+      </script>
+     
+<script>
+ 
+  </script>
+ <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+ 
+  <script>
+    $(document).ready(function() {
+  
+    $.ajax(
+      {
+         url:'/admin/getDate',
+         method:'get',
+success:(result)=>{
+  alert("hhhe")
+  console.log("-----------------hel---------------")
+console.log(result)
+  var labelArray = []  ;
+  var dataArray = []  ;
+  for(var i = 0 ;i < result.length ; i++){
+    labelArray.push(result[i]._id)
+    dataArray.push(result[i].count);
+  }
+  
+
+  const data = {
+          labels: labelArray,
+          datasets: [{
+            label: 'placed orders',
+            backgroundColor: 'rgb(255, 99, 132)',
+            
+            borderColor: 'blue',
+            data:dataArray,
+          }]
+        };
+      
+        const config = {
+          type: 'line',
+          data: data,
+          options: {}
+        };
+
+
+   const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+
+}
+      }
+    )
+
+});
+  </script>      
+    <script>
+    $(document).ready(function() {
+  
+    $.ajax(
+      {
+         url:'/admin/totalOrderpending',
+         method:'get',
+success:(result)=>{
+  alert("hhhe")
+  console.log("-----------------hel---------------")
+console.log(result)
+  var labelArray = [] ;
+  var dataArray = [] ;
+  for(var i = 0 ;i < result.length ; i++){
+    labelArray.push(result[i]._id)
+    dataArray.push(result[i].count);
+  }
+  
+
+  const data = {
+          labels: labelArray,
+          datasets: [{
+            label: 'pending orders',
+            backgroundColor: 'rgb(255, 99, 132)',
+            
+            borderColor: 'rgb(255, 99, 132)',
+            data:dataArray,
+          }]
+        };
+      
+        const config = {
+          type: 'bar',
+          data: data,
+          options: {}
+        };
+
+
+   const myChart = new Chart(
+      document.getElementById('myChart2'),
+      config
+    );
+
+}
+      }
+    )
+
+});
+  </script>   
+
+
+   <script>
+    $(document).ready(function() {
+  
+    $.ajax(
+      {
+         url:'/admin/totalOrdercancelled',
+         method:'get',
+success:(result)=>{
+  alert("hhhe")
+  console.log("-----------------hel---------------")
+console.log(result)
+  var labelArray = [] ;
+  var dataArray = [] ;
+  for(var i = 0 ;i < result.length ; i++){
+    labelArray.push(result[i]._id)
+    dataArray.push(result[i].count);
+  }
+  
+
+  const data = {
+          labels: labelArray,
+          datasets: [{
+            label: 'cancelled orders',
+            backgroundColor: 'red',
+            
+            borderColor: 'rgb(255, 99, 132)',
+            data:dataArray,
+          }]
+        };
+      
+        const config = {
+          type: 'doughnut',
+          data: data,
+          options: {}
+        };
+
+
+   const myChart = new Chart(
+      document.getElementById('myChart3'),
+      config
+    );
+
+}
+      }
+    )
+ 
+});
+</script>

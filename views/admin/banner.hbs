@@ -1,0 +1,79 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"><a href="/admin/addbanner"><i class="bx bx-right-arrow-alt"></i>Add New banner</a></h3>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"> Basic tables </li>
+                </ol>
+              </nav>
+            </div>
+            <div class="row">
+              
+            
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                
+                    </p>
+                    <div class="table-responsive">
+                      <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th>banner</th>
+                            <th>banner name</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {{#each banner}}
+                          <tr>
+                            <td><img src="/{{this._id}}.jpg" id="" style="width: 50px;height:50px" ></td>
+                            <td>{{this.banner-title}}</td>
+                            {{!-- <td>{{this.category}}</td>
+                            <td>{{this.price}}</td> --}}
+                            <td>
+                              {{!-- <a href="/admin/delete-banner/{{this._id}}"  onclick="swal.fire()" class="btn btn-danger"  >delete</a> --}}
+                             {{!-- <a class="btn btn-warning" href="/admin/edit-product/{{this._id}}">Edit</a> --}}
+                             <button class="btn btn-warning" onclick="msg('{{this._id}}')" >delete</button>
+                            </td>
+                            
+                          </tr>
+                          {{/each}}
+               
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          <script>
+                function viewImage1(event){
+                    document.getElementById('imgView').src=URL.createObjectURL(event.target.files[0])
+                }
+            </script>
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+          
+
