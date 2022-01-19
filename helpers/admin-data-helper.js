@@ -851,7 +851,15 @@ module.exports={
              })
  
             })
-        }
+        },
+        searchProductadmin:(item)=>{
+            return new Promise(async(resolve,reject)=>{
+               let data= await db.get().collection(collection.PRODUCT_COLLECTION).find({title:{$regex: item, $options: 'i'}}).toArray()
+                    console.log(data);
+                    resolve(data)
+              
+            })
+        },
        
 
        

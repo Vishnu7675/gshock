@@ -1,3 +1,4 @@
+
 <style>
     body {
     color: #000;
@@ -73,7 +74,7 @@ button:focus {
             {{!-- <p class="blue-text">Just answer a few questions<br> so that we can personalize the right experience for you.</p> --}}
             <div class="card">
                 {{!-- <h5 class="text-center mb-4">Powering world-class companies</h5> --}}
-                <form class="form-card" action="/admin/addcoupon" method="post">
+                <form class="form-card" action="/admin/addcoupon" method="post" id="addcoupon">
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">coupon name<span class="text-danger"> *</span></label> <input type="text" id="fname" name="couponName" placeholder="Enter your first name" onblur="validate(1)"> </div>
                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Expiry date<span class="text-danger"> *</span></label> <input type="date" id="lname" name="expiry" placeholder="Enter your last name" onblur="validate(2)"min="31/12/2021"/> </div>
@@ -96,3 +97,20 @@ button:focus {
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+<script>
+  
+$(document).ready(function(){
+  $("#addcoupon").validate({
+    rules:{
+        couponName:{
+            
+            required:true
+            digit:true
+        }
+    
+    }
+  })
+
+})
+</script>

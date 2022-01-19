@@ -14,8 +14,8 @@ const paypal = require('paypal-rest-sdk');
 const { TrustProductsEntityAssignmentsInstance } = require('twilio/lib/rest/trusthub/v1/trustProducts/trustProductsEntityAssignments');
 paypal.configure({
   'mode': 'sandbox', //sandbox or live
-  'client_id': 'Aexb4L5NIYB9kqLOtNCuw_5qfXrrqLzFOk6jmVnDjyY0_6zmNfi_qdNvy7yaHotZeg70Yt_EEUBzBbiL',
-  'client_secret': 'EEnvf8PYWB7ICXG_L25tp6lYzuZ6S7pBHNDfzvLgwteVixfZAL0Vc_jpaWgy_C2xkCJ6oUXMYvHW4yDH'
+  'client_id': process.env.CLIENT_ID,
+  'client_secret': process.env.CLIENT_SECRECT
 });
 const verifyLogin=(req,res,next)=>{
   if(req.session.user)
@@ -868,6 +868,7 @@ router.post('/updateprofile',(req,res)=>{
  res.redirect('/userprofile')
 
 })
+
 
 module.exports = router;
 // paypal

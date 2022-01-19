@@ -9,7 +9,7 @@ var db = require('./config/connection')
 var fileUpload=require('express-fileupload')
 var userRouter = require('./routes/user');
 var adminRouter = require('./routes/admin');
-
+require('dotenv').config();
 
 var app = express();
 
@@ -17,7 +17,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.engine('hbs',hbs({extname:'hbs',defaultLayout:'layout',layoutsDir:__dirname+'/views/',partialsDir:__dirname+'/views/partials/'}))
-app.use(logger('dev'));
+// app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

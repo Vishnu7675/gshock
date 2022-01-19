@@ -840,7 +840,12 @@ router.get('/deletecategoryoffer/:id',(req,res)=>{
      res.json(response)
    })
  })
-
+ router.post('/searchproductadmin',async(req,res)=>{
+  console.log(req.body)
+ let product = await adminHelper.searchProductadmin(req.body.data)
+ res.render('user/searchadmin',{admin:true,product})
+ console.log(product)
+})
 
 
 module.exports = router;
