@@ -5,10 +5,11 @@ const state = {
 }
 
 module.exports.connect = function(done){
-    const url = 'mongodb://localhost:27017'
+    const url = "mongodb+srv://user:user123@cluster0.vlr7e.mongodb.net/test"
     const dbname='trial'
 
     mongoClient.connect(url,(err,data)=>{
+        console.log(err)
         if(err) return done(err)
         state.db=data.db(dbname)
         done()
